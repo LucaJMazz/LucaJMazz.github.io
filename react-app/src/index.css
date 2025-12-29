@@ -24,6 +24,12 @@ body {
     margin: 0px;
     margin-top: 5rem;
 }
+.bagel-fat-one {
+    font-family: "Bagel Fat One", system-ui;
+}
+.jetbrains-mono {
+    font-family: "JetBrains Mono", monospace;
+}
 
 
 .rounded-yellow {

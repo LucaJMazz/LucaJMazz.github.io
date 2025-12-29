@@ -16,6 +16,7 @@
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-duration: 300ms;
     cursor: pointer;
+    user-select: none;
 }
 .menu:hover {
     transform: scale(110%);
@@ -46,11 +47,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    pointer-events: none;
     width: 100%;
 }
 
 .chevron {
+    pointer-events: auto;
     position: relative;
     font-size: 22px;
     cursor: pointer;
@@ -64,12 +66,14 @@
 }
 
 .item {
+    pointer-events: auto;
     position: relative;
     display: flex;
     align-items: center;
 }
 
 .item p {
+    pointer-events: auto;
     display: flex;
     position: relative;
     background: none;
@@ -98,12 +102,14 @@
 }
 
 .selected p {
+    pointer-events: auto;
     font-size: 1rem;
     font-weight: 1000;
     padding: .4rem;
 }
 
 .pill {
+    pointer-events: auto;
     transform-origin: center;
     position: absolute;
     inset: 0;

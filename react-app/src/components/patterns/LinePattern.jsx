@@ -41,15 +41,20 @@ function FullscreenPlane() {
     )
 }
 
-function LinePattern({ className, style}) {
+function LinePattern({ className, style, children }) {
     return (
-        <div className={className} style={style}>
-        <Canvas 
-            orthographic
-            camera={{ zoom: 1, position: [0, 0, 1] }}
-        >
-            <FullscreenPlane/>
-        </Canvas>
+        <div className={className} style={{ ...style, position: 'relative' }}>
+            <Canvas 
+                orthographic
+                camera={{ zoom: 1, position: [0, 0, 1] }}
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            >
+                <FullscreenPlane />
+            </Canvas>
+
+            <div style={{ position: 'relative', zIndex: 1 }}>
+                {children}
+            </div>
         </div>
     )
 }

@@ -1,14 +1,22 @@
-import { useState } from 'react';
-import { motion } from "motion/react"
-import { useNavigate } from "react-router-dom";
-import './Navbar.css'
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from "motion/react"
+import { useNavigate, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi";
+import './Navbar.css'
+import NavbarMenu from './NavbarMenu'
 
 function Navbar() {
     const [selected, setSelected] = useState(0);
-    const menuItems = ['Home', 'About Me', 'Experience', 'Projects', 'Creative Works'];
+    const [showMenu, setShowMenu] = useState(false);
+    const menuItems = ['Home', 'About Me', 'Projects', 'Creative Works'];
+    const locationIndex = {'/home': 0, '/about-me':1, '/projects':2, '/creative-works':3};
+    const location = useLocation();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setSelected(locationIndex[location.pathname]);
+    },[location])
 
     function chevronHandle(direction) {
         let val = selected + direction;
@@ -29,9 +37,13 @@ function Navbar() {
     }
 
     return (
+        <>
+        <AnimatePresence>
+            {showMenu && <NavbarMenu />}
+        </AnimatePresence>
         <div className='navbar-container'>
             <div className="bar">
-                <button><HiMenu className='menu'/></button>
+                <HiMenu className='menu' onClick={() => setShowMenu(!showMenu)}/>
 
                 <span className='item-holder'>
                 <FaChevronLeft className='chevron' onClick={() => chevronHandle(-1)}/>
@@ -48,6 +60,7 @@ function Navbar() {
                 <button className='rounded-yellow'>Contact</button>
             </div>
         </div>
+        </>
     )
 }
 
