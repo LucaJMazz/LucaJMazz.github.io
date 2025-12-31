@@ -2,6 +2,7 @@ import './AboutMe.css'
 import yorkLogo from '../../assets/york-u-logo.png';
 import variHall from '../../assets/vari-hall.png';
 import idImage from '../../assets/id-image.jpg';
+import suitImg from '../../assets/suit.png'
 import { useState, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import LinePattern from '../patterns/LinePattern';
@@ -48,7 +49,7 @@ function AboutMe() {
                 transition={{ type: "spring", stiffness: 260, damping: 18 }}
                 className='portrait-before shrink-0  m-5'>
                     <div className='portrait shrink-0 flex flex-col justify-center items-center'>
-                        <img src='.'></img>
+                        <img className='object-center object-cover' src={suitImg}></img>
                         <p className='mt-4 jetbrains-mono text-xl text-black'> Luca Mazzotta</p>
                     </div>
                 </motion.div>

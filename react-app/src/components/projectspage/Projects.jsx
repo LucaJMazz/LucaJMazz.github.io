@@ -2,6 +2,7 @@ import './Projects.css'
 import minesweeperImg from '../../assets/minesweeper++.png'
 import portfolioImg from '../../assets/portfolio.png'
 import minuteMathImg from '../../assets/minutemath.png'
+import sniffEmOutImg from '../../assets/sniffemout.png'
 import LinePattern from '../patterns/LinePattern';
 
 function Projects() {
@@ -13,7 +14,7 @@ function Projects() {
             <div className='grid grid-cols-2 grid-rows-2 gap-15'>
                 <ProjectBox name={'Portfolio Site'} 
                 desc={'Portfolio site for my personal applications'} 
-                tools={['ReactJs + Vite', 'Tailwind CSS', 'framer-motion', 'fimga']}
+                tools={['ReactJs + Vite', 'Tailwind CSS', 'framer-motion', 'Fimga']}
                 imgSrc={portfolioImg}
                 link={'/'}
                 span={'Designed and developed a fully responsive portfolio using React and Vite, styled with Tailwind CSS. Implemented smooth UI animations and page transitions with Framer Motion, focusing on clean component structure, performance, and modern frontend best practices.'}/>
@@ -35,11 +36,11 @@ function Projects() {
                 />
 
                 <ProjectBox name={'Sniff \'em out'} 
-                desc={'A Minesweeper game with different modes for a new experience'} 
-                tools={['Swift', 'XCode']}
-                imgSrc={minuteMathImg}
+                desc={'A mobile app where a group of people try to find who the odd man out is'} 
+                tools={['Swift', 'XCode', 'Figma']}
+                imgSrc={sniffEmOutImg}
                 link={'https://minutemath.netlify.app'}
-                span={'THis was mad ewith sksdvkasdjfbla sjdflasjdfl asjdfal sjdf alsjdf asd'}
+                span={'Developed Sniff \'em out as a social deduction experience using Swift and Xcode, prioritizing a "pass-and-play" mobile architecture. I designed and customize a branded UI and implemented a custom back-end system that handles state management to handle the topic and each players roles.'}
                 />
 
             </div>
