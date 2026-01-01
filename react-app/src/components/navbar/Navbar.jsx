@@ -15,7 +15,10 @@ function Navbar() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setSelected(locationIndex[location.pathname]);
+        if (location.pathname == '/') {
+            setSelected(0);
+        }
+        else setSelected(locationIndex[location.pathname]);
     },[location])
 
     function chevronHandle(direction) {
